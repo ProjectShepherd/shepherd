@@ -4,9 +4,8 @@
   <thead>
     <tr>
       <th>Missing person</th>
-      <th>Photo type</th>
-      <th>Photo (original)</th>
-      <th>Photo (medium)</th>
+      <th>Photo (mobile)</th>
+      <th>Photo (web)</th>
       <th>Photo (thumb)</th>
       <th></th>
       <th></th>
@@ -18,10 +17,9 @@
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.missing_person %></td>
-        <td><%= photo.photo_type %></td>
-        <td><%= image_tag photo.photo_attachment.url %></td>
-        <td><%= image_tag photo.photo_attachment.url(:medium) %></td>
-        <td><%= image_tag photo.photo_attachment.url(:thumb) %></td>
+        <td><%= image_tag photo.mobile%></td>
+        <td><%= image_tag photo.web %></td>
+        <td><%= image_tag photo.thumb %></td>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

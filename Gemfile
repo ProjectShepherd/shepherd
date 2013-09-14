@@ -32,7 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "paperclip", "~> 3.0"
 gem 'fuzzily'
 
 # Use ActiveModel has_secure_password
