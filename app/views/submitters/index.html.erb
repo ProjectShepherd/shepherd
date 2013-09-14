@@ -1,0 +1,35 @@
+<h1>Listing submitters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @submitters.each do |submitter| %>
+      <tr>
+        <td><%= submitter.first_name %></td>
+        <td><%= submitter.middle_name %></td>
+        <td><%= submitter.last_name %></td>
+        <td><%= submitter.phone_number %></td>
+        <td><%= submitter.email %></td>
+        <td><%= link_to 'Show', submitter %></td>
+        <td><%= link_to 'Edit', edit_submitter_path(submitter) %></td>
+        <td><%= link_to 'Destroy', submitter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Submitter', new_submitter_path %>

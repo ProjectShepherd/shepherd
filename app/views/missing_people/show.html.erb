@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @missing_person.first_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @missing_person.middle_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @missing_person.last_name %>
+</p>
+
+<p>
+  <strong>Location long:</strong>
+  <%= @missing_person.location_long %>
+</p>
+
+<p>
+  <strong>Location lat:</strong>
+  <%= @missing_person.location_lat %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @missing_person.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @missing_person.status %>
+</p>
+
+<p>
+  <strong>Found:</strong>
+  <%= @missing_person.found %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @missing_person.notes %>
+</p>
+
+<p>
+  <strong>Submitter:</strong>
+  <%= @missing_person.submitter %>
+</p>
+
+<%= link_to 'Edit', edit_missing_person_path(@missing_person) %> |
+<%= link_to 'Back', missing_people_path %>

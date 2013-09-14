@@ -1,0 +1,45 @@
+<h1>Listing missing_people</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Location long</th>
+      <th>Location lat</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Found</th>
+      <th>Notes</th>
+      <th>Submitter</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @missing_people.each do |missing_person| %>
+      <tr>
+        <td><%= missing_person.first_name %></td>
+        <td><%= missing_person.middle_name %></td>
+        <td><%= missing_person.last_name %></td>
+        <td><%= missing_person.location_long %></td>
+        <td><%= missing_person.location_lat %></td>
+        <td><%= missing_person.description %></td>
+        <td><%= missing_person.status %></td>
+        <td><%= missing_person.found %></td>
+        <td><%= missing_person.notes %></td>
+        <td><%= missing_person.submitter %></td>
+        <td><%= link_to 'Show', missing_person %></td>
+        <td><%= link_to 'Edit', edit_missing_person_path(missing_person) %></td>
+        <td><%= link_to 'Destroy', missing_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Missing person', new_missing_person_path %>

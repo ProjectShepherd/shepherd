@@ -1,0 +1,57 @@
+<%= form_for(@missing_person) do |f| %>
+  <% if @missing_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@missing_person.errors.count, "error") %> prohibited this missing_person from being saved:</h2>
+
+      <ul>
+      <% @missing_person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :location_long %><br>
+    <%= f.text_field :location_long %>
+  </div>
+  <div class="field">
+    <%= f.label :location_lat %><br>
+    <%= f.text_field :location_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </div>
+  <div class="field">
+    <%= f.label :found %><br>
+    <%= f.check_box :found %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :submitter %><br>
+    <%= f.text_field :submitter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
