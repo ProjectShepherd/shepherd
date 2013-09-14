@@ -89,8 +89,8 @@ class MissingPeopleControllerTest < ActionController::TestCase
 }
 JSON
       response.headers["Content-Type"] = "application/json"
-      post :create, json
-    end 
+      post :create, {"data" => json}
+    end
   end
 
   test "should update a missing person - KIDAI" do
@@ -108,7 +108,7 @@ JSON
 }
 JSON
       response.headers["Content-Type"] = "application/json"
-      put :update, json, :id => missing_person.id
+      put :update, {"data" => json, "id" => missing_person.id}
     end
-  end 
+  end
 end

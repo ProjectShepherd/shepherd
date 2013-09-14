@@ -28,7 +28,8 @@ class MissingPeopleController < ApplicationController
   # POST /missing_people
   # POST /missing_people.json
   def create
-    json = JSON.parse(request.raw_post)
+    input_json = params[:data]
+    json = JSON.parse(input_json)
 
     @missing_person = MissingPerson.new
     @submitter = Submitter.new
@@ -83,7 +84,9 @@ class MissingPeopleController < ApplicationController
   # PATCH/PUT /missing_people/1
   # PATCH/PUT /missing_people/1.json
   def update
-    json = JSON.parse(request.raw_post)
+    input_json = params[:data]
+    json = JSON.parse(input_json)
+
     @missing_person = MissingPerson.find(params[:id])
     @missing_person.found = json["found"]
     @missing_person.status = json["status"]
