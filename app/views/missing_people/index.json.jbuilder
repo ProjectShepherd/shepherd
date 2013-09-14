@@ -11,12 +11,10 @@ json.array!(@missing_people) do |missing_person|
   json.weight missing_person.weight
   json.sex missing_person.sex
 
-  if missing_person.photos.first.present?
-  	json.thumbnail missing_person.photos.first.photo_attachment.url(:thumb)
-  end
-
   json.pictures missing_person.photos do |photo|
-  	json.url photo.photo_attachment.url
+  	json.web photo.web
+  	json.mobile photo.mobile
+  	json.thumb photo.thumb
   end
 
   json.hair_color missing_person.hair_color
