@@ -4,4 +4,5 @@ class MissingPerson < ActiveRecord::Base
     "#{first_name} #{middle_name} #{last_name}"
   end
   fuzzily_searchable :full_name
+  has_many :photos
 end
