@@ -1,4 +1,36 @@
 json.array!(@missing_people) do |missing_person|
-  json.extract! missing_person, :found, :status, :first_name, :middle_name, :last_name, :age, :height, :weight, :sex, :hair_color, :eye_color, :race, :description, :initial_location_lat, :initial_location_long, :found_location_lat, :found_location_long, :submitter_id
-  json.url missing_person_url(missing_person, format: :json)
+  json.reporter_id missing_person.id
+  json.found missing_person.found
+  json.status missing_person.status
+  json.submission_time missing_person.created_at
+  json.first_name missing_person.first_name
+  json.middle_name missing_person.middle_name
+  json.last_name missing_person.last_name
+  json.age missing_person.age
+  json.height missing_person.height
+  json.weight missing_person.weight
+  json.sex missing_person.sex
+
+  json.hair_color missing_person.hair_color
+  json.eye_color missing_person.eye_color
+  json.race missing_person.race
+  json.description missing_person.description
+  json.initial_location do
+  	json.lat missing_person.initial_location_lat
+  	json.long missing_person.initial_location_long
+  end
+  json.found_location do
+  	json.lat missing_person.found_location_lat
+  	json.long missing_person.found_location_long
+  end
+  if missing_person.submitter.present?
+	  json.submitter do
+	  	json.first_name missing_person.submitter.first_name
+	  	json.middle_name missing_person.submitter.middle_name
+	  	json.last_name missing_person.submitter.last_name
+	  	json.phone missing_person.submitter.phone_number
+	  	json.email missing_person.submitter.email
+	  end
+  end
+
 end
