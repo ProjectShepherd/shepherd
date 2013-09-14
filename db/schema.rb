@@ -40,11 +40,13 @@ ActiveRecord::Schema.define(version: 20130914044059) do
 
   create_table "photos", force: true do |t|
     t.integer  "missing_person_id"
-    t.text     "mobile"
-    t.text     "web"
-    t.text     "thumb"
+    t.integer  "photo_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_attachment_file_name"
+    t.string   "photo_attachment_content_type"
+    t.integer  "photo_attachment_file_size"
+    t.datetime "photo_attachment_updated_at"
   end
 
   add_index "photos", ["missing_person_id"], name: "index_photos_on_missing_person_id"

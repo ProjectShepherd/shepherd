@@ -25,11 +25,44 @@ class MissingPeopleController < ApplicationController
   # POST /missing_people.json
   def create
     json = JSON.parse(request.raw_post)
-    p [:create, json, json["foo"]]
+    #p [:create, json, json["submitter"]]
     #
     #
     #
-    @missing_person = MissingPerson.new(missing_person_params)
+    missing_person = MissingPerson.new
+    submitter = Submitter.new
+    submitter.first_name = json["submitter"]["first_name"]
+    submitter.middle_name = json["submitter"]["middle_name"]
+    submitter.last_name = json["submitter"]["last_name"]
+    submitter.phone_number = json["submitter"]["phone"]
+    submitter.email = json["submitter"]["email"]
+
+    missing_person.found = false
+    missing_person.status = ""
+    missing_person.first_name = json["first_name"]
+    missing_person.middle_name = json["middle_name"]
+    missing_person.last_name = json["last_name"]
+    missing_person.age = json["age"]
+    missing_person.height = json["height"]
+    missing_person.weight = json["weight"]
+    missing_person.sex = json["sex"]
+    missing_person.hair_color = json["hair_color"]
+    missing_person.eye_color = json["eye_color"]
+    missing_person.race = json["race"]
+    missing_person.description = json["description"]
+    missing_person.initial_location_lat = json["initial_location"]["lat"]
+    missing_person.initial_location_long = json["initial_location"]["long"]
+    missing_person.found_location_lat = nil
+    missing_person.found_location_long = nil
+    missing_person.submitter_id = submitter.id
+
+    json["pictures"].each do |photo|
+      new_photo = Photo.new
+      new_photo.missing_person_id = missing_person.id
+      new_photo.mobile = photo["mobile"]
+      new_photo.web = photo["web"]
+      new_photo.thumb = photo["thumb"]
+    end
 
     # respond_to do |format|
     #   if @missing_person.save
