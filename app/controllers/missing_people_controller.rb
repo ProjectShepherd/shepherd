@@ -27,22 +27,17 @@ class MissingPeopleController < ApplicationController
   # POST /missing_people
   # POST /missing_people.json
   def create
-    json = JSON.parse(request.raw_post)
-    p [:create, json, json["foo"]]
-    #
-    #
-    #
     @missing_person = MissingPerson.new(missing_person_params)
 
-    # respond_to do |format|
-    #   if @missing_person.save
-    #     format.html { redirect_to @missing_person, notice: 'Missing person was successfully created.' }
-    #     format.json { render action: 'show', status: :created, location: @missing_person }
-    #   else
-    #     format.html { render action: 'new' }
-    #     format.json { render json: @missing_person.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+      if @missing_person.save
+        format.html { redirect_to @missing_person, notice: 'Missing person was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @missing_person }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @missing_person.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /missing_people/1
