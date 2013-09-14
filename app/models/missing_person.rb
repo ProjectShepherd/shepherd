@@ -3,6 +3,6 @@ class MissingPerson < ActiveRecord::Base
   def full_name
     "#{first_name} #{middle_name} #{last_name}"
   end
-  fuzzily_searchable :full_name
+#  fuzzily_searchable :full_name
   has_many :photos
 end
