@@ -79,8 +79,8 @@ class MissingPeopleController < ApplicationController
     end
   end
 
-  # PATCH/PUT /missing_people/1
-  # PATCH/PUT /missing_people/1.json
+  # PUT /missing_people/1
+  # PUT /missing_people/1.json
   def update
     json = JSON.parse(request.raw_post)
     @missing_person = MissingPerson.find(params[:id])
