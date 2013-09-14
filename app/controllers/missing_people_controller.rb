@@ -28,10 +28,7 @@ class MissingPeopleController < ApplicationController
   # POST /missing_people.json
   def create
     json = JSON.parse(request.raw_post)
-    #p [:create, json, json["submitter"]]
-    #
-    #
-    #
+
     @missing_person = MissingPerson.new
     @submitter = Submitter.new
     @submitter.first_name = json["submitter"]["first_name"]
@@ -85,8 +82,15 @@ class MissingPeopleController < ApplicationController
   # PATCH/PUT /missing_people/1
   # PATCH/PUT /missing_people/1.json
   def update
+    json = JSON.parse(request.raw_post)
+    @missing_person = MissingPerson.find(params[:id])
+    @missing_person.found = json["found"]
+    @missing_person.status = json["status"]
+    @missing_person.found_location_lat = json["found_location"]["lat"]
+    @missing_person.found_location_long = json["found_location"]["long"]
+
     respond_to do |format|
-      if @missing_person.update(missing_person_params)
+      if @missing_person.save!
         format.html { redirect_to @missing_person, notice: 'Missing person was successfully updated.' }
         format.json { head :no_content }
       else

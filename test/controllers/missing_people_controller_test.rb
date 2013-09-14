@@ -92,4 +92,23 @@ JSON
       post :create, json
     end 
   end
+
+  test "should update a missing person - KIDAI" do
+    missing_person = MissingPerson.new
+    missing_person.save!
+    assert_no_difference("MissingPerson.count") do
+      json =<<JSON
+{
+  "found": true,
+  "status": "XXXXX",
+  "found_location" : {
+    "lat" : "XXXXX",
+    "long": "YYYYY"
+  }
+}
+JSON
+      response.headers["Content-Type"] = "application/json"
+      put :update, json, :id => missing_person.id
+    end
+  end 
 end
