@@ -4,9 +4,12 @@ class MissingPeopleController < ApplicationController
   # GET /missing_people
   # GET /missing_people.json
   def index
-    @missing_people = MissingPerson.all
+    if params[:q].nil?
+        @missing_people = MissingPerson.all
+    else
+        @missing_people = MissingPerson.find_by_fuzzy_full_name(params[:q]);
+    end
   end
-
   # GET /missing_people/1
   # GET /missing_people/1.json
   def show

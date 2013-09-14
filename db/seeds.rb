@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+m = MissingPerson.create!("first_name" => "Zach", "last_name" => "Michaelov")
+m.create_submitter!("first_name" => "Jack", "last_name" => "Ma")
+
+MissingPerson.create!("first_name" => "Marc", "last_name" => "C")
+MissingPerson.create!("first_name" => "Daniel", "last_name" => "M")
