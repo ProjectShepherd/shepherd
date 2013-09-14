@@ -1,5 +1,6 @@
 class MissingPeopleController < ApplicationController
   before_action :set_missing_person, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /missing_people
   # GET /missing_people.json
