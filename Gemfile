@@ -54,3 +54,7 @@ gem 'fuzzily'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#Use Mandrill API for e-mail notifications
+gem "mandrill-api", "~> 1.0.47"
+

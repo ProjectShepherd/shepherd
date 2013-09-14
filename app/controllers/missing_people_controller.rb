@@ -95,6 +95,30 @@ class MissingPeopleController < ApplicationController
 
     respond_to do |format|
       if @missing_person.save!
+        if @missing_person.found
+          require 'mandrill'
+          m = Mandrill::API.new 'vxLOsZag5BmqDGfBEoHfKg'
+          message = {
+            :subject=> "Shepherd: Your Sheep Has Been Found!",
+            :from_name=> "Shepherd",
+            :text=>"
+            Hello " + @missing_person.submitter.first_name + 
+            ", \n\nA first responder is believed to have found " + 
+            @missing_person.first_name + " " + @missing_person.last_name + ". \n" +
+            "Here are notes on his/her status: \n" + @missing_person.status + "\n\n" +
+            "We're happy to keep you in the loop! \n\n - Shepherd Team",
+            :to=>[
+              {
+                :email=> @missing_person.submitter.email,
+                :name=> @missing_person.submitter.first_name + " " + 
+                @missing_person.submitter.last_name
+              }
+            ],
+            :from_email=>"projectshephrd@gmail.com"
+          }
+          sending = m.messages.send message
+          puts sending
+        end
         format.html { redirect_to @missing_person, notice: 'Missing person was successfully updated.' }
         format.json { head :no_content }
       else

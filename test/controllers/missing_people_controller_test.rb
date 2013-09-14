@@ -95,12 +95,18 @@ JSON
 
   test "should update a missing person - KIDAI" do
     missing_person = MissingPerson.new
+    missing_person.first_name = "Bob"
+    missing_person.last_name = "Zulu"
+    missing_person.submitter = Submitter.new
+    missing_person.submitter.first_name = "George"
+    missing_person.submitter.last_name = "Smith"
+    missing_person.submitter.email = "flora_jin@brown.edu"
     missing_person.save!
     assert_no_difference("MissingPerson.count") do
       json =<<JSON
 {
   "found": true,
-  "status": "XXXXX",
+  "status": "status here",
   "found_location" : {
     "lat" : "XXXXX",
     "long": "YYYYY"
@@ -111,4 +117,5 @@ JSON
       put :update, {"data" => json, "id" => missing_person.id}
     end
   end
+
 end

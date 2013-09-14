@@ -36,6 +36,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     erubis (2.7.0)
+    excon (0.25.3)
     execjs (2.0.1)
     fuzzily (0.3.0)
       activerecord (>= 2.3.17)
@@ -51,6 +52,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-api (1.0.47)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
@@ -120,6 +124,7 @@ DEPENDENCIES
   fuzzily
   jbuilder (~> 1.2)
   jquery-rails
+  mandrill-api (~> 1.0.47)
   pg
   rails (= 4.0.0)
   rails_12factor
