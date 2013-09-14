@@ -35,7 +35,7 @@ class PhotosControllerTest < ActionController::TestCase
   end
 
   test "should update photo" do
-    patch :update, id: @photo, photo: { missing_person_id: @photo.missing_person_id, photo_type: @photo.photo_type }
+    patch :update, id: @photo, photo: { missing_person_id: @photo.missing_person_id }
     assert_redirected_to photo_path(assigns(:photo))
   end
 
