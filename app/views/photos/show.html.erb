@@ -5,17 +5,7 @@
   <%= @photo.missing_person %>
 </p>
 
-<p>
-  <strong>Photo type:</strong>
-  <%= @photo.photo_type %>
-</p>
 
-<p>
-  <strong>Photos:</strong>
-  <%= image_tag @photo.photo_attachment.url %>
-  <%= image_tag @photo.photo_attachment.url(:medium) %>
-  <%= image_tag @photo.photo_attachment.url(:thumb) %>
-</p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

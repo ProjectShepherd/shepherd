@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914044054) do
+ActiveRecord::Schema.define(version: 20130914044059) do
 
   create_table "missing_people", force: true do |t|
     t.boolean  "found"
@@ -40,13 +40,11 @@ ActiveRecord::Schema.define(version: 20130914044054) do
 
   create_table "photos", force: true do |t|
     t.integer  "missing_person_id"
-    t.integer  "photo_type"
+    t.text     "mobile"
+    t.text     "web"
+    t.text     "thumb"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_attachment_file_name"
-    t.string   "photo_attachment_content_type"
-    t.integer  "photo_attachment_file_size"
-    t.datetime "photo_attachment_updated_at"
   end
 
   add_index "photos", ["missing_person_id"], name: "index_photos_on_missing_person_id"
@@ -60,5 +58,16 @@ ActiveRecord::Schema.define(version: 20130914044054) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "trigrams", force: true do |t|
+    t.string  "trigram",     limit: 3
+    t.integer "score",       limit: 2
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.string  "fuzzy_field"
+  end
+
+  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match"
+  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner"
 
 end
