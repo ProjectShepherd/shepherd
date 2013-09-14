@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914032520) do
+ActiveRecord::Schema.define(version: 20130914044054) do
 
   create_table "missing_people", force: true do |t|
+    t.boolean  "found"
+    t.text     "status"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.decimal  "location_long"
-    t.decimal  "location_lat"
+    t.integer  "age"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "sex"
+    t.string   "hair_color"
+    t.string   "eye_color"
+    t.string   "race"
     t.text     "description"
-    t.text     "status"
-    t.boolean  "found"
-    t.text     "notes"
+    t.decimal  "initial_location_lat"
+    t.decimal  "initial_location_long"
+    t.decimal  "found_location_lat"
+    t.decimal  "found_location_long"
     t.integer  "submitter_id"
     t.datetime "created_at"
     t.datetime "updated_at"

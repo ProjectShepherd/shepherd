@@ -69,6 +69,6 @@ class MissingPeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def missing_person_params
-      params.require(:missing_person).permit(:first_name, :middle_name, :last_name, :location_long, :location_lat, :description, :status, :found, :notes, :submitter_id)
+      params.require(:missing_person).permit(:found, :status, :first_name, :middle_name, :last_name, :age, :height, :weight, :sex, :hair_color, :eye_color, :race, :description, :initial_location_lat, :initial_location_long, :found_location_lat, :found_location_long, :submitter_id)
     end
 end

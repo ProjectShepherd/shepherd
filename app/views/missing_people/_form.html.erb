@@ -12,6 +12,14 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :found %><br>
+    <%= f.check_box :found %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </div>
+  <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </div>
@@ -24,28 +32,52 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :location_long %><br>
-    <%= f.text_field :location_long %>
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
   </div>
   <div class="field">
-    <%= f.label :location_lat %><br>
-    <%= f.text_field :location_lat %>
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :hair_color %><br>
+    <%= f.text_field :hair_color %>
+  </div>
+  <div class="field">
+    <%= f.label :eye_color %><br>
+    <%= f.text_field :eye_color %>
+  </div>
+  <div class="field">
+    <%= f.label :race %><br>
+    <%= f.text_field :race %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_area :status %>
+    <%= f.label :initial_location_lat %><br>
+    <%= f.text_field :initial_location_lat %>
   </div>
   <div class="field">
-    <%= f.label :found %><br>
-    <%= f.check_box :found %>
+    <%= f.label :initial_location_long %><br>
+    <%= f.text_field :initial_location_long %>
   </div>
   <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+    <%= f.label :found_location_lat %><br>
+    <%= f.text_field :found_location_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :found_location_long %><br>
+    <%= f.text_field :found_location_long %>
   </div>
   <div class="field">
     <%= f.label :submitter %><br>

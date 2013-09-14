@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Found:</strong>
+  <%= @missing_person.found %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @missing_person.status %>
+</p>
+
+<p>
   <strong>First name:</strong>
   <%= @missing_person.first_name %>
 </p>
@@ -16,13 +26,38 @@
 </p>
 
 <p>
-  <strong>Location long:</strong>
-  <%= @missing_person.location_long %>
+  <strong>Age:</strong>
+  <%= @missing_person.age %>
 </p>
 
 <p>
-  <strong>Location lat:</strong>
-  <%= @missing_person.location_lat %>
+  <strong>Height:</strong>
+  <%= @missing_person.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @missing_person.weight %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @missing_person.sex %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @missing_person.hair_color %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @missing_person.eye_color %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @missing_person.race %>
 </p>
 
 <p>
@@ -31,18 +66,23 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @missing_person.status %>
+  <strong>Initial location lat:</strong>
+  <%= @missing_person.initial_location_lat %>
 </p>
 
 <p>
-  <strong>Found:</strong>
-  <%= @missing_person.found %>
+  <strong>Initial location long:</strong>
+  <%= @missing_person.initial_location_long %>
 </p>
 
 <p>
-  <strong>Notes:</strong>
-  <%= @missing_person.notes %>
+  <strong>Found location lat:</strong>
+  <%= @missing_person.found_location_lat %>
+</p>
+
+<p>
+  <strong>Found location long:</strong>
+  <%= @missing_person.found_location_long %>
 </p>
 
 <p>

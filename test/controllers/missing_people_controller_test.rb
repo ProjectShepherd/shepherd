@@ -18,7 +18,7 @@ class MissingPeopleControllerTest < ActionController::TestCase
 
   test "should create missing_person" do
     assert_difference('MissingPerson.count') do
-      post :create, missing_person: { description: @missing_person.description, first_name: @missing_person.first_name, found: @missing_person.found, last_name: @missing_person.last_name, location_lat: @missing_person.location_lat, location_long: @missing_person.location_long, middle_name: @missing_person.middle_name, notes: @missing_person.notes, status: @missing_person.status, submitter_id: @missing_person.submitter_id }
+      post :create, missing_person: { age: @missing_person.age, description: @missing_person.description, eye_color: @missing_person.eye_color, first_name: @missing_person.first_name, found: @missing_person.found, found_location_lat: @missing_person.found_location_lat, found_location_long: @missing_person.found_location_long, hair_color: @missing_person.hair_color, height: @missing_person.height, initial_location_lat: @missing_person.initial_location_lat, initial_location_long: @missing_person.initial_location_long, last_name: @missing_person.last_name, middle_name: @missing_person.middle_name, race: @missing_person.race, sex: @missing_person.sex, status: @missing_person.status, submitter_id: @missing_person.submitter_id, weight: @missing_person.weight }
     end
 
     assert_redirected_to missing_person_path(assigns(:missing_person))
@@ -35,7 +35,7 @@ class MissingPeopleControllerTest < ActionController::TestCase
   end
 
   test "should update missing_person" do
-    patch :update, id: @missing_person, missing_person: { description: @missing_person.description, first_name: @missing_person.first_name, found: @missing_person.found, last_name: @missing_person.last_name, location_lat: @missing_person.location_lat, location_long: @missing_person.location_long, middle_name: @missing_person.middle_name, notes: @missing_person.notes, status: @missing_person.status, submitter_id: @missing_person.submitter_id }
+    patch :update, id: @missing_person, missing_person: { age: @missing_person.age, description: @missing_person.description, eye_color: @missing_person.eye_color, first_name: @missing_person.first_name, found: @missing_person.found, found_location_lat: @missing_person.found_location_lat, found_location_long: @missing_person.found_location_long, hair_color: @missing_person.hair_color, height: @missing_person.height, initial_location_lat: @missing_person.initial_location_lat, initial_location_long: @missing_person.initial_location_long, last_name: @missing_person.last_name, middle_name: @missing_person.middle_name, race: @missing_person.race, sex: @missing_person.sex, status: @missing_person.status, submitter_id: @missing_person.submitter_id, weight: @missing_person.weight }
     assert_redirected_to missing_person_path(assigns(:missing_person))
   end
 

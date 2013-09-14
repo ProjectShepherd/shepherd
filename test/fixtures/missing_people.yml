@@ -1,25 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  found: false
+  status: MyText
   first_name: MyString
   middle_name: MyString
   last_name: MyString
-  location_long: 9.99
-  location_lat: 9.99
+  age: 1
+  height: 1
+  weight: 1
+  sex: MyString
+  hair_color: MyString
+  eye_color: MyString
+  race: MyString
   description: MyText
-  status: MyText
-  found: false
-  notes: MyText
+  initial_location_lat: 9.99
+  initial_location_long: 9.99
+  found_location_lat: 9.99
+  found_location_long: 9.99
   submitter_id: 
 
 two:
+  found: false
+  status: MyText
   first_name: MyString
   middle_name: MyString
   last_name: MyString
-  location_long: 9.99
-  location_lat: 9.99
+  age: 1
+  height: 1
+  weight: 1
+  sex: MyString
+  hair_color: MyString
+  eye_color: MyString
+  race: MyString
   description: MyText
-  status: MyText
-  found: false
-  notes: MyText
+  initial_location_lat: 9.99
+  initial_location_long: 9.99
+  found_location_lat: 9.99
+  found_location_long: 9.99
   submitter_id: 
