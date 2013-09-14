@@ -62,6 +62,7 @@ class MissingPeopleController < ApplicationController
     json["pictures"].each do |photo|
       new_photo = Photo.new
       new_photo.missing_person_id = missing_person.id
+      p new_photo
       new_photo.mobile = photo["mobile"]
       new_photo.web = photo["web"]
       new_photo.thumb = photo["thumb"]
